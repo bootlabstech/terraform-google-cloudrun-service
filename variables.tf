@@ -18,7 +18,25 @@ variable "traffic_percent" {
   description = "The traffic for the cloudrun service"
   type        = number 
 }
-variable "if_latest_revision" {
-  description = "Whether to update for the cloudrun service"
-  type        = bool
+variable "cloudrun_cpu" {
+  description = "Amt of cpu for the cloudrun - service "
+  type        = string
+  default     = "1000m"
+}
+variable "cloudrun_memory" {
+  description = "Amt of memory for the cloudrun - service"
+  type        = string
+  default     = "512M"
+}
+variable "connector_name" {
+  description = "Name of the vpc_access_connector"
+  type        = string
+}
+variable "region" {
+  description = "REgion of the vpc_access_connector"
+  type        = string
+}
+variable "network" {
+  description = "Network of the vpc_access_connector"
+  type        = string
 }
