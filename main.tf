@@ -31,14 +31,11 @@ resource "google_cloud_run_service" "default" {
       metadata {
       annotations = {
         # Limit scale up to prevent any cost blow outs!
-        "autoscaling.knative.dev/maxScale" = "5"
+        "autoscaling.knative.dev/maxScale" = var.max_scale
         # Use the VPC Connector
         "run.googleapis.com/vpc-access-connector" = google_vpc_access_connector.connector.name
         # all egress from the service should go through the VPC Connector
-        "run.googleapis.com/vpc-access-egress" = "all-traffic"
+        "run.googleapis.com/vpc-access-egress" = var.egress_traffic
       }
     }
   }
-
-
-}

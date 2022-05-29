@@ -40,3 +40,11 @@ variable "network" {
   description = "Network of the vpc_access_connector"
   type        = string
 }
+variable "max_scale" {
+  description = "No. of parallel srvs to which scaling is done"
+  type        = string
+}
+variable "egress_traffic" {
+  description = "Allowed egress for the connector.Can be either of private-ranges-only and all-traffic."
+  type        = string
+}
