@@ -44,3 +44,7 @@ variable "egress_traffic" {
   description = "Allowed egress for the connector.Can be either of private-ranges-only and all-traffic."
   type        = string
 }
+variable "ip_cidr_range" {
+  description = "the cidr for the connector"
+  type        = string
+}

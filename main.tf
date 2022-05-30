@@ -9,6 +9,7 @@ resource "google_vpc_access_connector" "connector" {
   region        = var.region
   network       = var.network
   project       = var.project
+  ip_cidr_range = var.ip_cidr_range
 }
 
 resource "google_cloud_run_service" "default" {
