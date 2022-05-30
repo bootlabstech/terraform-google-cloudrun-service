@@ -14,10 +14,6 @@ variable "cloudrun_image" {
   description = "The image for the cloudrun service"
   type        = string
 }
-variable "traffic_percent" {
-  description = "The traffic for the cloudrun service"
-  type        = number 
-}
 variable "cloudrun_cpu" {
   description = "Amt of cpu for the cloudrun - service "
   type        = string

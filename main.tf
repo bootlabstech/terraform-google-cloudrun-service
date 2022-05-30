@@ -8,6 +8,7 @@ resource "google_vpc_access_connector" "connector" {
   provider      = google-beta
   region        = var.region
   network       = var.network
+  project       = var.project
 }
 
 resource "google_cloud_run_service" "default" {
