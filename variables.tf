@@ -14,6 +14,7 @@ variable "cloudrun_image" {
   description = "The image for the cloudrun service"
   type        = string
 }
+
 variable "cloudrun_cpu" {
   description = "Amt of cpu for the cloudrun - service "
   type        = string
@@ -24,18 +25,7 @@ variable "cloudrun_memory" {
   type        = string
   default     = "512M"
 }
-variable "connector_name" {
-  description = "Name of the vpc_access_connector"
-  type        = string
-}
-variable "region" {
-  description = "REgion of the vpc_access_connector"
-  type        = string
-}
-variable "network" {
-  description = "Network of the vpc_access_connector"
-  type        = string
-}
+
 variable "max_scale" {
   description = "No. of parallel srvs to which scaling is done"
   type        = string
@@ -44,7 +34,8 @@ variable "egress_traffic" {
   description = "Allowed egress for the connector.Can be either of private-ranges-only and all-traffic."
   type        = string
 }
-variable "ip_cidr_range" {
-  description = "the cidr for the connector"
+
+variable "vpc_connector_self_link" {
   type        = string
+  description = "The self link of host project vpc connector"
 }
