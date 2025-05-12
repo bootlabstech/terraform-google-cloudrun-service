@@ -31,4 +31,10 @@ resource "google_cloud_run_service" "default" {
       }
     }
   }
+  lifecycle {
+    ignore_changes = [
+      template[0].metadata[0].labels["run.googleapis.com/startupProbeType"],
+      template[0].spec[0].service_account_name
+    ]
+  }
 }
